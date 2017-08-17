@@ -1,0 +1,68 @@
+<!--
+    Copyright 2013 Mac Craven
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" charset="UTF-8"/>
+    <title>Shape Save Demo</title>
+    <style type="text/css">
+      #map, html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+
+      #buttons {
+        position: fixed;
+        top: 5px;
+        right: 5px;
+      }
+    </style>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing&sensor=false"></script>
+    <script type="text/javascript" src="shape-save-demo.js"></script>
+    <script type="text/javascript">
+function initialize() {
+    var shapesMap = new ShapesMap(
+        document.getElementById("map"),
+        document.getElementById("delete-button"),
+        document.getElementById("clear-button"),
+        document.getElementById("console"));
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <table style="width:100%;height:100%;border-style:none;border-collapse:collapse;">
+      <tr>
+        <td style="width:100%;height:80%;border-width:0px;padding:0px;">
+          <div id="map"></div>
+          <div id="buttons">
+            <input type="button" id="delete-button" value="Delete Shape">
+            <input type="button" id="clear-button" value="Clear All Shapes">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="width:100%;height:20%;border-width:0px;padding:0px;">
+          <textarea id="console" readonly="readonly" style="width:100%;height:100%;border:0px;margin:0px;background-color:#e0f0a0;"></textarea>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
