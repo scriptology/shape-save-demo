@@ -363,6 +363,8 @@ function ShapesMap(_mapContainer, _deleteButton, _clearButton, _console) {
         var value = escape(shapes)
             + "; expires=" + expirationDate.toUTCString();
         document.cookie = "shapes=" + value;
+
+        //localStorage.setItem('shapes', JSON.stringify(value));
     }
 
     function shapesLoad() {
